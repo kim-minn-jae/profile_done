@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_margin="2dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log-in"
+        android:textSize="60sp" />
+
+    <EditText
+        android:id="@+id/emailEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:layout_margin="2dp"/>
+
+    <EditText
+        android:id="@+id/password_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:inputType="numberPassword"
+        android:layout_margin="2dp"/>
+    <RadioGroup
+        android:id="@+id/rg_userType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/bt_radioLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내국인"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/bt_radioForeign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="외국인"/>
+
+    </RadioGroup>
+    <Button
+        android:id="@+id/bt_Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="로그인"
+        />
+
+    <Button
+        android:id="@+id/bt_GoToSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="회원가입" />
+
+
+
+</LinearLayout>

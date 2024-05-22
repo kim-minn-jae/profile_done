@@ -19,7 +19,7 @@
         android:id="@+id/myImageView"
         android:layout_width="360dp"
         android:layout_height="159dp"
-        android:src="@drawable/gu1"
+        android:src="@drawable/guiddy_main_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="비밀번호"
-        android:inputType="textPassword"
+        android:inputType="numberPassword"
         android:layout_margin="2dp"/>
     <RadioGroup
         android:id="@+id/rg_userType"
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="로그인"
-        android:background="@drawable/button_border"
+        android:background="@drawable/border_button"
         />
 
     <TextView
@@ -102,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="회원가입"
-        android:background="@drawable/button_border"
+        android:background="@drawable/border_button"
         />
 
 

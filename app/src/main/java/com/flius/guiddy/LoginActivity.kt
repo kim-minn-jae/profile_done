@@ -57,14 +57,14 @@ class LoginActivity : AppCompatActivity() {
                 if(task.isSuccessful) {
                     when (selectedUserType) {
                         R.id.bt_radioLocal -> {
-                            val intent = Intent(this, RegistrationActivity::class.java)
+                            val intent = Intent(this, KoMainActivity::class.java)
                             startActivity(intent)
                             Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                             finish()
                         }
 
                         R.id.bt_radioForeign -> {
-                            val intent = Intent(this, Profilelist::class.java)
+                            val intent = Intent(this, KoMainActivity::class.java)
                             startActivity(intent)
                             Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                             finish()

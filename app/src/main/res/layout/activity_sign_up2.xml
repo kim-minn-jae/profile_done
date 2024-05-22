@@ -8,10 +8,10 @@
     tools:context=".SignUpActivity2">
 
     <EditText
-        android:id="@+id/tv_country"
+        android:id="@+id/country_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="country"
+        android:hint="Country"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,10 +19,10 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <EditText
-        android:id="@+id/tv_language"
+        android:id="@+id/language_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="language"
+        android:hint="Language"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,10 +30,10 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <EditText
-        android:id="@+id/tv_Name"
+        android:id="@+id/nickname_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
+        android:hint="Nickname"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -55,10 +55,10 @@
         app:layout_constraintVertical_bias="0.939" />
 
     <EditText
-        android:id="@+id/tv_sex"
+        android:id="@+id/sex_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="sex"
+        android:hint="Sex"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"

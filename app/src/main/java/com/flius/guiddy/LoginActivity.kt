@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import com.flius.guiddy.databinding.ActivityLoginBinding
 import com.google.firebase.Firebase
@@ -20,6 +22,9 @@ class LoginActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityLoginBinding
     lateinit var mAuth: FirebaseAuth
+    private lateinit var rg_UserType: RadioGroup
+    private lateinit var bt_RadioLocal: RadioButton
+    private lateinit var bt_RadioForeign: RadioButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +32,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         mAuth = Firebase.auth
+        rg_UserType = findViewById(R.id.rg_userType)
+        bt_RadioLocal = findViewById(R.id.bt_radioLocal)
+        bt_RadioForeign = findViewById(R.id.bt_radioForeign)
 
         binding.btLogin.setOnClickListener {
             val email = binding.emailEdit.text.toString()
@@ -44,15 +52,30 @@ class LoginActivity : AppCompatActivity() {
     private fun login(email: String, password: String){
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    val intent: Intent = Intent(this@LoginActivity, MainActivity::class.java)
-                    startActivity(intent)
-                    Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
-                    finish()
-                } else {
+                val selectedUserType = rg_UserType.checkedRadioButtonId
+
+                if(task.isSuccessful) {
+                    when (selectedUserType) {
+                        R.id.bt_radioLocal -> {
+                            val intent = Intent(this, RegistrationActivity::class.java)
+                            startActivity(intent)
+                            Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
+                            finish()
+                        }
+
+                        R.id.bt_radioForeign -> {
+                            val intent = Intent(this, Profilelist::class.java)
+                            startActivity(intent)
+                            Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
+                            finish()
+                        }
+                    }
+                }else{
                     Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
                     Log.d("Login", "Error: ${task.exception}")
                 }
+
+
             }
     }
 }

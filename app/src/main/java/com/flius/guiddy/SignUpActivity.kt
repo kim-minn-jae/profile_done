@@ -20,6 +20,7 @@ class SignUpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpBinding
     lateinit var mAuth: FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
+    private lateinit var bt_SignUpConfirm1: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +30,8 @@ class SignUpActivity : AppCompatActivity() {
         mAuth = Firebase.auth
         mDbRef = Firebase.database.reference
 
-        binding.btSignUpConfirm.setOnClickListener {
+        bt_SignUpConfirm1 = findViewById(R.id.bt_SignUpConfirm1)
+        bt_SignUpConfirm1.setOnClickListener {
             val name = binding.nameEdit.text.toString().trim()
             val email = binding.emailEdit.text.toString().trim()
             val password = binding.passwordEdit.text.toString().trim()
@@ -44,7 +46,7 @@ class SignUpActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
-                    val intent: Intent = Intent(this@SignUpActivity, LoginActivity::class.java)
+                    val intent: Intent = Intent(this@SignUpActivity, setProfile::class.java)
                     addUserToDatabase(name, email, mAuth.currentUser?.uid!!)
                     startActivity(intent)
                 } else {

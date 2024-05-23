@@ -35,7 +35,7 @@ class KoMainActivity : AppCompatActivity(), PersonAdapter.OnItemClickListener {
             when (item.itemId) {
                 R.id.bt_message -> {
                     // 메시지 버튼 클릭 처리
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, ChatListActivity::class.java)
                     startActivity(intent)
                     true
                 }

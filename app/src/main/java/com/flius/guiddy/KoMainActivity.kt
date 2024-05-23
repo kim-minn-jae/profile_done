@@ -41,7 +41,7 @@ class KoMainActivity : AppCompatActivity(), PersonAdapter.OnItemClickListener {
                 }
                 R.id.bt_p -> {
                     // 프로필 버튼 클릭 처리
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, ProfileDetailActivity::class.java)
                     startActivity(intent)
                     true
                 }
